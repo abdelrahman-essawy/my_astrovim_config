@@ -70,6 +70,27 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     -- Set up custom filetypes
+    -- vim.g.nvim_lsp_code_lens =
+    --   1,
+    -- Define a command to trigger code lens display
+    -- vim.cmd [[command! -nargs=0 ShowCodeLens lua require('my_module').show_code_lens()]]
+
+    -- -- Define a function to show code lens
+    -- local function show_code_lens()
+    --   local bufnr = vim.api.nvim_get_current_buf()
+    --   local client_id = vim.lsp.get_active_clients()[1].id -- Assuming you have an active LSP client
+    --
+    --   -- Create your code lens actions (replace this with actual actions)
+    --   local code_lens_actions = {
+    --     -- Define your code lens actions here
+    --   }
+    --
+    --   -- Display the code lens actions
+    --   vim.lsp.codelens.display(code_lens_actions, bufnr, client_id)
+    -- end
+
+    -- Export the function
+    -- vim.api.nvim_set_var("my_module", { show_code_lens = show_code_lens })
     -- vim.filetype.add {
     --   extension = {
     --     foo = "fooscript",
@@ -81,5 +102,33 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    --
+    --
+    -- if File_watchers == nil then File_watchers = {} end
+    -- local watch_file_augroup = "watch_file_augroup"
+    -- vim.api.nvim_create_augroup(watch_file_augroup, { clear = true })
+    -- vim.api.nvim_create_autocmd("VimLeave", {
+    --   group = watch_file_augroup,
+    --   callback = function()
+    --     for _, watcher in pairs(File_watchers) do
+    --       watcher:stop()
+    --     end
+    --   end,
+    -- })
+    -- local function watch_file(fname, cb, time)
+    --   if File_watchers[fname] then
+    --     File_watchers[fname]:stop()
+    --     File_watchers[fname] = nil
+    --   end
+    --
+    --   File_watchers[fname] = vim.loop.new_fs_poll()
+    --   File_watchers[fname]:start(fname, time, vim.schedule_wrap(cb))
+    -- end
+    --
+    -- local init_lua = vim.fn.stdpath "/lua/**"
+    -- watch_file(init_lua, function()
+    --   dofile(init_lua)
+    --   vim.notify("Reloaded init.lua", vim.diagnostic.severity.INFO)
+    -- end, 500)
   end,
 }

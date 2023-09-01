@@ -2,9 +2,7 @@ return {
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function()
-      require("lsp_signature").setup()
-    end,
+    config = function() require("lsp_signature").setup() end,
   },
   {
     "andweeb/presence.nvim",
@@ -39,4 +37,16 @@ return {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
+  {
+    dir = "~/development/personal/npm-scripts.nvim",
+    dev = true,
+    event = "VeryLazy",
+    config = function() require("npm-scripts").setup {} end,
+  },
+
+  -- {
+  --   "abdelrahman-essawy/npm-scripts.nvim",
+  --   config = function() require("npm-scripts").setup {} end,
+  --   event = "VeryLazy",
+  -- },
 }

@@ -31,10 +31,17 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+    -- Select all
+    ["<C-a>"] = { "ggVG", desc = "Select All" },
+    -- reload config
+    ["<leader>rc"] = { ":luafile ~/.config/nvim/init.lua<cr>", desc = "Reload Config" },
   },
   t = {
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
+    -- press <esc> to hide the terminal
+  },
+  i = {
+    ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save File" },
+    ["<C-a>"] = { "ggVG", desc = "Select All" },
   },
 }

@@ -11,4 +11,5 @@ return {
   { import = "astrocommunity.pack.html-css" },
   -- { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.indent.indent-tools-nvim" },
 }
