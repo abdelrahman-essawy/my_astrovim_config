@@ -43,6 +43,15 @@ return {
     event = "VeryLazy",
     config = function() require("npm-scripts").setup {} end,
   },
+  {
+    "dmmulroy/tsc.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("tsc").setup {
+        -- on_attach = function(client) client.resolved_capabilities.document_formatting = false end,
+      }
+    end,
+  },
 
   -- {
   --   "abdelrahman-essawy/npm-scripts.nvim",
