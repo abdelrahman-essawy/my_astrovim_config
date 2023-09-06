@@ -52,6 +52,11 @@ return {
       }
     end,
   },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    event = "VeryLazy",
+    build = function() require("telescope").load_extension "project" end,
+  },
 
   -- {
   --   "abdelrahman-essawy/npm-scripts.nvim",

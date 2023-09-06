@@ -57,6 +57,12 @@ return {
     -- change without copying to clipboard
     ["cc"] = { '"_cc', desc = "Change line" },
     ["C"] = { '"_C', desc = "Change to the end of line" },
+
+    -- Telescope projects
+    ["<leader>fp"] = {
+      ":lua require'telescope'.extensions.project.project{}<CR>",
+      desc = "Find projects",
+    },
   },
   t = {
     -- press <esc> to hide the terminal
