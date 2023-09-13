@@ -37,12 +37,12 @@ return {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
-  {
-    dir = "~/development/personal/npm-scripts.nvim",
-    dev = true,
-    event = "VeryLazy",
-    config = function() require("npm-scripts").setup {} end,
-  },
+  -- {
+  --   dir = "~/development/personal/npm-scripts.nvim",
+  --   dev = true,
+  --   event = "VeryLazy",
+  --   config = function() require("npm-scripts").setup {} end,
+  -- },
   {
     "dmmulroy/tsc.nvim",
     event = "VeryLazy",
@@ -58,9 +58,9 @@ return {
     build = function() require("telescope").load_extension "project" end,
   },
 
-  -- {
-  --   "abdelrahman-essawy/npm-scripts.nvim",
-  --   config = function() require("npm-scripts").setup {} end,
-  --   event = "VeryLazy",
-  -- },
+  {
+    "abdelrahman-essawy/npm-scripts.nvim",
+    config = function() require("npm-scripts").setup {} end,
+    event = "VeryLazy",
+  },
 }
