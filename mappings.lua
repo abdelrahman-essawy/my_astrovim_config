@@ -58,6 +58,12 @@ return {
     ["cc"] = { '"_cc', desc = "Change line" },
     ["C"] = { '"_C', desc = "Change to the end of line" },
 
+    -- paste always to new line
+    -- ["p"] = { 'o<C-R>"', desc = "Paste to new line" },
+    -- ["P"] = { 'O<C-R>"', desc = "Paste to new line" },
+
+    ["c'"] = { "<esc>\"_ci'", desc = "Change inside single quotes" },
+    ['c"'] = { '<esc>"_ci"', desc = "Change inside dounle quotes" },
     -- Telescope projects
     ["<leader>fp"] = {
       ":lua require'telescope'.extensions.project.project{}<CR>",
@@ -71,15 +77,17 @@ return {
     ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save File" },
     ["<C-a>"] = { "<esc>ggVG", desc = "Select All" },
     ["<C-f>"] = { "<esc><Right>cw", desc = "Change word forward" },
-    -- ["<C-c>'"] = { "<esc>ci'", desc = "Change inside single quotes" },
-    -- ['<C-c>"'] = { '<esc>ci"', desc = "Change inside dounle quotes" },
-    ["<C-0>"] = { "<esc>ci)", desc = "Change inside parentheses" },
+    -- ["<C-'>"] = { "<esc>ci'", desc = "Change inside single quotes" },
+    -- ['<C-">'] = { '<esc>ci"', desc = "Change inside dounle quotes" },
+    ["<C-b>"] = { '<esc>"_c)"', desc = "Change inside parentheses" },
+    ["<C-B>"] = { '<esc>"_c}"', desc = "Change inside parentheses" },
+    ["<C-r>"] = { '<esc>"_c]"', desc = "Change inside parentheses" },
     ["<C-]>"] = { "<esc>ci]", desc = "Change inside brackets" },
     ["<C-}>"] = { "<esc>ci}", desc = "Change inside braces" },
     ["<C-d>"] = { "<esc>dd", desc = "Delete line" },
     ["<C-o>"] = { "<esc>o", desc = "insert line" },
     ["<C-u>"] = { "<esc>u", desc = "Undo" },
-    ["<C-r>"] = { "<esc><C-r>", desc = "Redo" },
-    ["<C-c>"] = { "<esc>cc", desc = "change line" },
+    -- ["<C-r>"] = { "<esc><C-r>", desc = "Redo" },
+    ["<C-c>"] = { '<esc>"_cc', desc = "change line" },
   },
 }

@@ -1,3 +1,19 @@
+local height = 18
+local namespace = vim.api.nvim_create_namespace "GlancePlaceHolder"
+local place_holder = {}
+for _ = 1, height, 1 do
+  place_holder[#place_holder + 1] = { { "", "Error" } }
+end
+local id = 0
+
+local function before_open(results, open)
+  local lnum = vim.api.nvim_win_get_cursor(0)[1]
+  id = vim.api.nvim_buf_set_extmark(0, namespace, lnum - 1, 0, { virt_lines = place_holder })
+  open(results)
+end
+
+local function after_close() vim.api.nvim_buf_del_extmark(0, namespace, id) end
+
 return {
   {
     "ray-x/lsp_signature.nvim",
@@ -62,5 +78,77 @@ return {
     "abdelrahman-essawy/npm-scripts.nvim",
     config = function() require("npm-scripts").setup {} end,
     event = "VeryLazy",
+  },
+  -- {
+  --   "VidocqH/lsp-lens.nvim",
+  --   event = "BufRead",
+  --   config = function() require("lsp-lens").setup() end,
+  -- },
+  {
+    "dnlhc/glance.nvim",
+    config = function()
+      require("glance").setup {
+        height = height,
+        hooks = { before_open = before_open, after_close = after_close },
+      }
+      vim.keymap.set("n", "gD", "<CMD>Glance definitions<CR>")
+      vim.keymap.set("n", "gR", "<CMD>Glance references<CR>")
+      vim.keymap.set("n", "gY", "<CMD>Glance type_definitions<CR>")
+      vim.keymap.set("n", "gM", "<CMD>Glance implementations<CR>")
+    end,
+    event = "BufRead",
+  },
+  -- {
+  --   "IMOKURI/line-number-interval.nvim",
+  --   event = "BufRead",
+  --   build = function()
+  --     -- set global values
+  --     vim.g.line_number_interval_enable_at_startup = true
+  --     vim.g.line_number_interval_start = 5
+  --     vim.g.line_number_interval = 5
+  --     vim.g.line_number_interval_highlight = "LineNr"
+  --     vim.g.line_number_interval_highlight_bg = "Normal"
+  --     vim.g.line_number_interval_highlight_fg = "Comment"
+  --     vim.g.line_number_interval_highlight_style = "bold"
+  --   end,
+  -- },
+  --
+  {
+    "LeonHeidelbach/trailblazer.nvim",
+    event = "BufRead",
+    config = function()
+      require("trailblazer").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end,
+  },
+  {
+    "onsails/diaglist.nvim",
+    event = "BufRead",
+  },
+  {
+    "folke/flash.nvim",
+    event = "BufRead",
+    opts = {
+      -- incremental = true,
+      -- mode = "fuzzy",
+      modes = { char = { enabled = false } },
+    },
+    keys = {
+      { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  },
+  {
+    "mattkubej/jest.nvim",
+    event = "BufRead",
+  },
+  {
+    "dylanaraps/wal.vim",
   },
 }

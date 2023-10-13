@@ -130,5 +130,9 @@ return {
     --   dofile(init_lua)
     --   vim.notify("Reloaded init.lua", vim.diagnostic.severity.INFO)
     -- end, 500)
+    vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true })
+    vim.api.nvim_set_keymap("n", "D", '"_D', { noremap = true })
+    vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
+    vim.api.nvim_set_keymap("n", "C", '"_C', { noremap = true })
   end,
 }
