@@ -4,8 +4,11 @@ return {
   -- example of importing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  { import = "astrocommunity.motion.grapple-nvim" },
-  -- { import = "astrocommunity.motion.harpoon" },
+  -- { import = "astrocommunity.motion.grapple-nvim" },
+  { import = "astrocommunity.motion.harpoon" },
+  { import = "astrocommunity.motion.marks-nvim" },
+  { import = "astrocommunity.markdown-and-latex.vimtex" },
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.motion.portal-nvim" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
@@ -14,6 +17,9 @@ return {
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.prisma" },
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.lua" },

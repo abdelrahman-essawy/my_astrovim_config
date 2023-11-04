@@ -148,7 +148,4 @@ return {
     "mattkubej/jest.nvim",
     event = "BufRead",
   },
-  {
-    "dylanaraps/wal.vim",
-  },
 }

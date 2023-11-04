@@ -17,6 +17,95 @@ return {
         woff2 = { icon = "", name = "WebOpenFontFormat2" },
         xz = { icon = "", name = "Xz" },
         zip = { icon = "", name = "Zip" },
+
+        ["controller.ts"] = {
+          icon = "🌐", -- 󰊰 , 󰊱 , 󰊲 , 󰊳 , 🌐
+          name = "Controller",
+        },
+        ["controller.js"] = {
+          icon = "🌐",
+          name = "Controller (JS)",
+        },
+        ["service.ts"] = {
+          icon = "󰒪",
+          name = "Service",
+        },
+        ["service.js"] = {
+          icon = "󰒪",
+          name = "Service (JS)",
+        },
+        ["module.ts"] = {
+          icon = "📦",
+          name = "Module",
+        },
+        ["module.js"] = {
+          icon = "📦",
+          name = "Module (JS)",
+        },
+        ["guard.ts"] = {
+          icon = "🛡️",
+          name = "Guard",
+        },
+        ["guard.js"] = {
+          icon = "🛡️",
+          name = "Guard (JS)",
+        },
+        ["pipe.ts"] = {
+          icon = "󱒴",
+          name = "Pipe",
+        },
+        ["pipe.js"] = {
+          icon = "󱒴",
+          name = "Pipe (JS)",
+        },
+        ["middleware.ts"] = {
+          icon = "󰥏",
+          name = "Middleware",
+        },
+        ["middleware.js"] = {
+          icon = "󰥏",
+          name = "Middleware (JS)",
+        },
+        ["decorator.ts"] = {
+          icon = "󱄯",
+          name = "Decorator",
+        },
+        ["decorator.js"] = {
+          icon = "󱄯",
+          name = "Decorator (JS)",
+        },
+        ["filter.ts"] = {
+          icon = "󱒾",
+          name = "Filter",
+        },
+        ["filter.js"] = {
+          icon = "󱒾",
+          name = "Filter (JS)",
+        },
+        ["resolver.ts"] = {
+          icon = "🧩",
+          name = "Resolver",
+        },
+        ["resolver.js"] = {
+          icon = "🧩",
+          name = "Resolver (JS)",
+        },
+        ["entity.ts"] = {
+          icon = "󱓜",
+          name = "Entity",
+        },
+        ["entity.js"] = {
+          icon = "󱓜",
+          name = "Entity (JS)",
+        },
+        ["dto.ts"] = {
+          icon = "󱢹",
+          name = "Dto",
+        },
+        ["dto.js"] = {
+          icon = "󱢹",
+          name = "Dto (JS)",
+        },
       },
     },
   },
@@ -60,6 +149,10 @@ return {
         if not pcall(vim.treesitter.start, buf, "markdown") then vim.bo[buf].syntax = "markdown" end
         vim.wo[win].spell = false
       end,
+      render = "compact",
+      max_height = 10,
+      max_width = 80,
+      timeout = 1000,
     },
     config = require "plugins.configs.notify",
   },
