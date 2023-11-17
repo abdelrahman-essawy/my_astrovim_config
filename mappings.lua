@@ -69,11 +69,45 @@ return {
       ":lua require'telescope'.extensions.project.project{}<CR>",
       desc = "Find projects",
     },
+
+    -- window navigation with ctrl + arrow keys
+    ["<C-Left>"] = { "<C-w>h", desc = "Navigate left" },
+    ["<C-Down>"] = { "<C-w>j", desc = "Navigate down" },
+    ["<C-Up>"] = { "<C-w>k", desc = "Navigate up" },
+    ["<C-Right>"] = { "<C-w>l", desc = "Navigate right" },
+
+    ["<leader>uo"] = { ":SymbolsOutline<cr>", desc = "Open Outline" },
+
+    -- open nautilus
+    ["<leader>n"] = { ":!nautilus .<cr>", desc = "Open Nautilus" },
+
+    -- show select terminal ui
+    ["<leader>ts"] = { ":TermSelect<cr>", desc = "Toggle Terminal Select" },
+
+    -- toggle terminal
+    ["<leader>tt"] = { ":ToggleTerm<cr>", desc = "Toggle Terminal" },
+    -- teminals from 1 to 0
+    ["<leader>t1"] = {
+      ":TermExec cmd='dev || pnpm start:dev' direction=horizontal<cr><ESC><C-k>",
+      desc = "Open dev Terminal",
+    },
+    ["<leader>t2"] = { ":TermExec <cr>", desc = "Open Terminal 2" },
+    ["<leader>t3"] = { ":TermExec <cr>", desc = "Open Terminal 3" },
+    ["<leader>t4"] = { ":TermExec <cr>", desc = "Open Terminal 4" },
+    ["<leader>t5"] = { ":TermExec <cr>", desc = "Open Terminal 5" },
+    ["<leader>t6"] = { ":TermExec <cr>", desc = "Open Terminal 6" },
+    ["<leader>t7"] = { ":TermExec <cr>", desc = "Open Terminal 7" },
+    ["<leader>t8"] = { ":TermExec <cr>", desc = "Open Terminal 8" },
+    ["<leader>t9"] = { ":TermExec <cr>", desc = "Open Terminal 9" },
+    ["<leader>t0"] = { ":TermExec <cr>", desc = "Open Terminal 0" },
   },
   t = {
-    -- press <esc> to hide the terminal
+    -- press esc to exit terminal mode
+    ["<esc>"] = { "<C-\\><C-n>", desc = "Exit Terminal Mode" },
   },
   i = {
+    -- press caps to esc
+    -- ["caps"] = { "escape", desc = "Caps to Esc in Insert Mode" },
     ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save File" },
     ["<C-a>"] = { "<esc>ggVG", desc = "Select All" },
     ["<C-f>"] = { "<esc><Right>cw", desc = "Change word forward" },

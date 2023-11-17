@@ -7,6 +7,7 @@ return {
   -- { import = "astrocommunity.motion.grapple-nvim" },
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.marks-nvim" },
+  -- { import = "astrocommunity.workflow.hardtime-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
